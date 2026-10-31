@@ -3,8 +3,8 @@ spring:
     name: Okienko
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5433/okienko}
-    username: okienko
-    password: okienko
+    username: ${DB_USERNAME:okienko}
+    password: ${DB_PASSWORD:okienko}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
