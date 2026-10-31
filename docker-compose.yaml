@@ -2,11 +2,11 @@ services:
   postgres:
     image: postgres:16
     environment:
-      POSTGRES_USER: okienko
-      POSTGRES_PASSWORD: okienko
-      POSTGRES_DB: okienko
+      POSTGRES_USER: ${DB_USERNAME:-okienko}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-okienko}
+      POSTGRES_DB: ${DB_NAME:-okienko}
     ports:
-      - "5433:5432"
+      - "${DB_PORT:-5433}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 volumes:
